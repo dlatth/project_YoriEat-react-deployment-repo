@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  background-color: #f8f9fa;
+}
+
+.nav-item {
+  margin: 10px 0;
+}
+
+.nav-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 50px;
+}
+
+.nav-icon.active::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.nav-icon.active.home::before {
+  background-color: rgba(112, 128, 144, 0.2);
+}
+
+.nav-icon.active.script::before {
+  background-color: rgba(255, 230, 0, 0.3);
+}
+
+.nav-icon.active.userDetail::before {
+  background-color: rgba(122, 90, 250, 0.2);
+}
+
+.nav-icon.active.like::before {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.nav-icon.active.setting::before {
+  background-color: rgba(199, 199, 199, 0.4);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/mainCategories.css';
 
-const MainCategories = () => {
+const MainCategories: React.FC = () => {
   return <div>MainCategories</div>;
 };
 
