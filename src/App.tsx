@@ -12,8 +12,8 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div>
-        <Navbar />
+      <Navbar />
+      <div className="content">
         <Routes>
           <Route path="/" element={<Navigate to="/mainCategories" />} />
           <Route path="/mainCategories" element={<MainCategories />} />
