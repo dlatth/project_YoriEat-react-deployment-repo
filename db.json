@@ -1,0 +1,239 @@
+{
+  "categories": [
+    { "id": 1, "name": "fresh", "bg_color": "#FFD700", "txt_color": "#000000", "image": "image_url" },
+    { "id": 2, "name": "simple", "bg_color": "#ADD8E6", "txt_color": "#000000", "image": "image_url" },
+    { "id": 3, "name": "spicy", "bg_color": "#FF4500", "txt_color": "#FFFFFF", "image": "image_url" },
+    { "id": 4, "name": "dessert", "bg_color": "#FFB6C1", "txt_color": "#000000", "image": "image_url" },
+    { "id": 5, "name": "vegan", "bg_color": "#32CD32", "txt_color": "#FFFFFF", "image": "image_url" }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "salad",
+      "text": "신선한 샐러드",
+      "ingredient": ["야채", "닭가슴살"],
+      "time": 10,
+      "process": ["1. 야채를 씻는다.", "2. 닭가슴살을 데운다."],
+      "tags": ["fresh", "simple"],
+      "description": "플레이팅 꿀팁은 ~",
+      "category_id": 1,
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "name": "spaghetti",
+      "text": "이탈리아 전통 스파게티",
+      "ingredient": ["면", "토마토소스"],
+      "time": 20,
+      "process": ["1. 면을 삶는다.", "2. 소스를 만든다."],
+      "tags": ["simple"],
+      "description": "맛있는 스파게티 만들기",
+      "category_id": 2,
+      "user_id": 2
+    },
+    {
+      "id": 3,
+      "name": "spicy chicken",
+      "text": "매콤한 치킨",
+      "ingredient": ["닭가슴살", "고추"],
+      "time": 30,
+      "process": ["1. 닭가슴살을 자른다.", "2. 고추를 넣고 볶는다."],
+      "tags": ["spicy"],
+      "description": "매운맛 좋아하시는 분들께 추천",
+      "category_id": 3,
+      "user_id": 3
+    },
+    {
+      "id": 4,
+      "name": "brownie",
+      "text": "초콜릿 브라우니",
+      "ingredient": ["초콜릿", "밀가루"],
+      "time": 40,
+      "process": ["1. 재료를 섞는다.", "2. 오븐에 굽는다."],
+      "tags": ["dessert"],
+      "description": "달콤한 브라우니 레시피",
+      "category_id": 4,
+      "user_id": 1
+    },
+    {
+      "id": 5,
+      "name": "vegan burger",
+      "text": "비건 버거",
+      "ingredient": ["비건 패티", "빵"],
+      "time": 15,
+      "process": ["1. 패티를 굽는다.", "2. 빵에 패티를 넣는다."],
+      "tags": ["vegan"],
+      "description": "건강한 비건 버거",
+      "category_id": 5,
+      "user_id": 2
+    },
+    {
+      "id": 6,
+      "name": "grilled cheese",
+      "text": "그릴드 치즈",
+      "ingredient": ["치즈", "빵"],
+      "time": 10,
+      "process": ["1. 치즈를 빵에 올린다.", "2. 그릴에 구운다."],
+      "tags": ["simple"],
+      "description": "간단한 그릴드 치즈 레시피",
+      "category_id": 2,
+      "user_id": 3
+    },
+    {
+      "id": 7,
+      "name": "chocolate cake",
+      "text": "초콜릿 케이크",
+      "ingredient": ["초콜릿", "밀가루"],
+      "time": 60,
+      "process": ["1. 재료를 섞는다.", "2. 오븐에 굽는다."],
+      "tags": ["dessert"],
+      "description": "부드러운 초콜릿 케이크",
+      "category_id": 4,
+      "user_id": 1
+    },
+    {
+      "id": 8,
+      "name": "stir fry vegetables",
+      "text": "볶은 야채",
+      "ingredient": ["야채", "간장"],
+      "time": 15,
+      "process": ["1. 야채를 썬다.", "2. 간장에 볶는다."],
+      "tags": ["fresh", "simple"],
+      "description": "간단한 볶은 야채 레시피",
+      "category_id": 1,
+      "user_id": 2
+    },
+    {
+      "id": 9,
+      "name": "pancakes",
+      "text": "팬케이크",
+      "ingredient": ["밀가루", "우유"],
+      "time": 20,
+      "process": ["1. 재료를 섞는다.", "2. 팬에 굽는다."],
+      "tags": ["dessert"],
+      "description": "부드러운 팬케이크",
+      "category_id": 4,
+      "user_id": 3
+    },
+    {
+      "id": 10,
+      "name": "tofu stir fry",
+      "text": "두부 볶음",
+      "ingredient": ["두부", "야채"],
+      "time": 15,
+      "process": ["1. 두부를 썬다.", "2. 야채와 함께 볶는다."],
+      "tags": ["vegan"],
+      "description": "건강한 두부 볶음",
+      "category_id": 5,
+      "user_id": 1
+    },
+    {
+      "id": 11,
+      "name": "caesar salad",
+      "text": "시저 샐러드",
+      "ingredient": ["로메인", "크루통"],
+      "time": 10,
+      "process": ["1. 로메인을 씻는다.", "2. 크루통을 넣는다."],
+      "tags": ["fresh"],
+      "description": "클래식 시저 샐러드",
+      "category_id": 1,
+      "user_id": 2
+    },
+    {
+      "id": 12,
+      "name": "fried rice",
+      "text": "볶음밥",
+      "ingredient": ["밥", "야채"],
+      "time": 15,
+      "process": ["1. 밥을 준비한다.", "2. 야채와 함께 볶는다."],
+      "tags": ["simple"],
+      "description": "간단한 볶음밥 레시피",
+      "category_id": 2,
+      "user_id": 3
+    },
+    {
+      "id": 13,
+      "name": "kimchi stew",
+      "text": "김치찌개",
+      "ingredient": ["김치", "돼지고기"],
+      "time": 40,
+      "process": ["1. 김치를 준비한다.", "2. 돼지고기와 함께 끓인다."],
+      "tags": ["spicy"],
+      "description": "매콤한 김치찌개",
+      "category_id": 3,
+      "user_id": 1
+    },
+    {
+      "id": 14,
+      "name": "berry smoothie",
+      "text": "베리 스무디",
+      "ingredient": ["베리", "요거트"],
+      "time": 5,
+      "process": ["1. 재료를 믹서에 넣는다.", "2. 갈아준다."],
+      "tags": ["fresh"],
+      "description": "상큼한 베리 스무디",
+      "category_id": 1,
+      "user_id": 2
+    },
+    {
+      "id": 15,
+      "name": "banana bread",
+      "text": "바나나 빵",
+      "ingredient": ["바나나", "밀가루"],
+      "time": 50,
+      "process": ["1. 재료를 섞는다.", "2. 오븐에 굽는다."],
+      "tags": ["dessert"],
+      "description": "촉촉한 바나나 빵",
+      "category_id": 4,
+      "user_id": 3
+    }
+  ],
+  "comments": [
+    { "id": 1, "text": "너무 맛있었어요!", "user_id": 1, "recipe_id": 1, "comment_id": null },
+    { "id": 2, "text": "간단하고 좋아요!", "user_id": 2, "recipe_id": 2, "comment_id": null },
+    { "id": 3, "text": "매운 거 좋아하는데 딱이네요.", "user_id": 3, "recipe_id": 3, "comment_id": null }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "임소연",
+      "email": "dlat.th45@gmail.com",
+      "tags": ["fresh", "simple"],
+      "bio": "든든한 한끼를 간편하게",
+      "social": { "instagram": "dlat.th", "tiktok": "dlat.th" },
+      "image": "image_url",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "name": "김민수",
+      "email": "minsu.kim@example.com",
+      "tags": ["simple", "vegan"],
+      "bio": "건강한 요리를 좋아하는 요리사",
+      "social": { "instagram": "minsu_kim", "tiktok": "minsu_kim" },
+      "image": "image_url",
+      "password": "5678"
+    },
+    {
+      "id": 3,
+      "name": "박지현",
+      "email": "jihyun.park@example.com",
+      "tags": ["spicy", "dessert"],
+      "bio": "매운 음식과 달콤한 디저트를 사랑합니다",
+      "social": { "instagram": "jihyun_park", "tiktok": "jihyun_park" },
+      "image": "image_url",
+      "password": "abcd"
+    }
+  ],
+  "user_likes": [
+    { "user_id": 1, "recipe_id": 1 },
+    { "user_id": 2, "recipe_id": 2 },
+    { "user_id": 3, "recipe_id": 3 }
+  ],
+  "scripts": [{ "id": 1, "name": "간편 레시피", "user_id": 1 }],
+  "script_recipes": [
+    { "script_id": 1, "recipe_id": 1 },
+    { "script_id": 1, "recipe_id": 2 },
+    { "script_id": 1, "recipe_id": 3 }
+  ]
+}
