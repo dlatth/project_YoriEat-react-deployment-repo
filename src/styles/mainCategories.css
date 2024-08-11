@@ -34,8 +34,8 @@
 
 /* 카테고리 이미지 스타일 */
 .category-image {
-  width: 800px;
-  height: 800px;
+  width: 70vmin;
+  height: 70vmin;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -48,7 +48,10 @@
 
 /* 카테고리 이름 스타일 */
 h1 {
-  font-size: 50rem;
+  font-size: 27vw;
+  line-height: 1.2;
+  word-wrap: break-word;
+  white-space: normal;
   text-align: center;
   position: absolute;
   z-index: 0;

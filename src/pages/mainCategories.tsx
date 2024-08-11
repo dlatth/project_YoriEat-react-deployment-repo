@@ -26,13 +26,20 @@ const MainCategories: React.FC = () => {
   }, []);
 
   // 이전 카테고리로 이동하는 함수
-  const handlePrevClick = () => {
+  const handlePrevClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setCurrentCategoryIndex((prevIndex) => (prevIndex === 0 ? categories.length - 1 : prevIndex - 1));
   };
 
   // 다음 카테고리로 이동하는 함수
-  const handleNextClick = () => {
+  const handleNextClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setCurrentCategoryIndex((prevIndex) => (prevIndex === categories.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const handleCategoryClick = () => {
+    const category = categories[currentCategoryIndex];
+    navigate(`/categorySelect`, { state: { category } });
   };
 
   // 현재 카테고리 정보
@@ -42,7 +49,11 @@ const MainCategories: React.FC = () => {
   if (categories.length === 0) return <div>Loading...</div>;
 
   return (
-    <div className="category-container" style={{ backgroundColor: currentCategory.bg_color }}>
+    <div
+      className="category-container"
+      style={{ backgroundColor: currentCategory.bg_color }}
+      onClick={handleCategoryClick}
+    >
       <div className="arrow" onClick={handlePrevClick}>
         <img src={`${process.env.PUBLIC_URL}/images/angleLeft.svg`} alt="Previous" />
       </div>
