@@ -1,10 +1,10 @@
 {
   "categories": [
-    { "id": 1, "name": "fresh", "bg_color": "#FFD700", "txt_color": "#000000", "image": "image_url" },
-    { "id": 2, "name": "simple", "bg_color": "#ADD8E6", "txt_color": "#000000", "image": "image_url" },
-    { "id": 3, "name": "spicy", "bg_color": "#FF4500", "txt_color": "#FFFFFF", "image": "image_url" },
-    { "id": 4, "name": "dessert", "bg_color": "#FFB6C1", "txt_color": "#000000", "image": "image_url" },
-    { "id": 5, "name": "vegan", "bg_color": "#32CD32", "txt_color": "#FFFFFF", "image": "image_url" }
+    { "id": 1, "name": "fresh", "bg_color": "#FFD700", "txt_color": "#000000", "image": "/images/fresh_1.jpg" },
+    { "id": 2, "name": "simple", "bg_color": "#ADD8E6", "txt_color": "#000000", "image": "/images/simple_1.jpg" },
+    { "id": 3, "name": "spicy", "bg_color": "#FF4500", "txt_color": "#FFFFFF", "image": "/images/spicy_1.jpg" },
+    { "id": 4, "name": "dessert", "bg_color": "#FFB6C1", "txt_color": "#000000", "image": "/images/dessert_1.jpg" },
+    { "id": 5, "name": "vegan", "bg_color": "#32CD32", "txt_color": "#FFFFFF", "image": "/images/vegan_1.jpg" }
   ],
   "recipes": [
     {
