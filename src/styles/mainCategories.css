@@ -47,7 +47,7 @@
 }
 
 /* 카테고리 이름 스타일 */
-.current-category-title {
+h1 {
   font-size: 27vw;
   line-height: 1.2;
   word-wrap: break-word;
