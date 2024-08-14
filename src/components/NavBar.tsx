@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/navBar.css';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const getActiveClass = (path: string) => {
     const baseClass = 'nav-icon';
@@ -26,8 +27,15 @@ const Navbar: React.FC = () => {
     return baseClass;
   };
 
+  const handleClickBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="navbar">
+      <div className="nav-item" onClick={handleClickBack}>
+        <img src="/images/Back.png" alt="Back" className="nav-icon" />
+      </div>
       <Link to="/mainCategories" className="nav-item">
         <div className={getActiveClass('/mainCategories')}>
           <img src="/images/Home.svg" alt="Home" className="nav-icon" />
@@ -52,6 +60,9 @@ const Navbar: React.FC = () => {
         <div className={getActiveClass('/setting')}>
           <img src="/images/Setting.svg" alt="Setting" className="nav-icon" />
         </div>
+      </Link>
+      <Link to="/recentViews" className="nav-item">
+        <img src="/images/Recent.png" alt="RecentViews" className="nav-icon" />
       </Link>
     </div>
   );
