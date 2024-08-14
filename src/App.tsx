@@ -7,6 +7,7 @@ import UserDetail from './pages/UserDetail';
 import RecipeDetail from './pages/RecipeDetail';
 import Setting from './components/Setting';
 import Navbar from './components/NavBar';
+import RecentViews from './pages/RecentViews';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/userDetail" element={<UserDetail />} />
           <Route path="/recipeDetail" element={<RecipeDetail />} />
           <Route path="/setting" element={<Setting />} />
+          <Route path="/recentViews" element={<RecentViews />} />
         </Routes>
       </div>
     </Router>
