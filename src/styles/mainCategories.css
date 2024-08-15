@@ -1,5 +1,5 @@
 /* 메인 카테고리 페이지 스타일 */
-.category-container {
+.main-categories {
   display: flex;
   align-items: center;
   justify-content: space-between;

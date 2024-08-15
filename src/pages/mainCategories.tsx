@@ -50,7 +50,7 @@ const MainCategories: React.FC = () => {
 
   return (
     <div
-      className="category-container"
+      className="main-categories"
       style={{ backgroundColor: currentCategory.bg_color }}
       onClick={handleCategoryClick}
     >
