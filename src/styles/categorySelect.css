@@ -2,16 +2,18 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  background-color: #f0f0f0;
 }
 
+/* 카테고리 캡슐 */
 .category-capsule {
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 13%;
   transform: translateX(-40%);
-  width: 50%;
-  height: 60vh;
-  border-radius: 50% / 60%;
+  width: 45%;
+  height: 55vh;
+  border-radius: 45% / 55%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -23,6 +25,18 @@
 .category-title {
   font-size: 10rem;
   text-align: right;
+  word-wrap: break-word;
   margin: 0;
   padding: 0;
+}
+
+/* 레시피 라인 모음 */
+.recipe-container {
+  position: absolute;
+  display: grid; /* 그리드 레이아웃을 사용하여 하위 요소 배치 */
+  height: 70vh;
+  top: 15%;
+  overflow-x: auto;
+  padding: 10px;
+  margin-bottom: 0;
 }
