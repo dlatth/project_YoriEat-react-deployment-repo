@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/recipeLine.css';
 
 interface Recipe {
@@ -16,6 +17,7 @@ interface RecipeLineProps {
 
 const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, lineIndex }) => {
   const lineRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const line = lineRef.current;
@@ -43,13 +45,17 @@ const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, lineIndex }) => {
     };
   }, []);
 
+  const handleCardClick = (recipe: Recipe) => {
+    navigate('/recipeDetail', { state: { recipe } });
+  };
+
   // 라인의 시작점을 조정하기 위한 offset
   const offset = lineIndex * 150;
 
   return (
     <div className="recipe-line" ref={lineRef} style={{ marginLeft: `${offset}px` }}>
       {recipes.map((recipe) => (
-        <div key={recipe.id} className="recipe-card">
+        <div key={recipe.id} className="recipe-card" onClick={() => handleCardClick(recipe)}>
           <div className="recipe-text">
             <h2 className="card-name">{recipe.name}</h2>
             <p className="card-text">{recipe.text}</p>
