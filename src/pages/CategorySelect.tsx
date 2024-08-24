@@ -9,6 +9,7 @@ interface Recipe {
   user_id: number;
   name: string;
   text: string;
+  images: string[];
 }
 
 const CategorySelect: React.FC = () => {

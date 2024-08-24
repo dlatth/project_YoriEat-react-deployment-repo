@@ -8,6 +8,7 @@ interface Recipe {
   user_id: number;
   name: string;
   text: string;
+  images: string[];
 }
 
 interface RecipeLineProps {
@@ -49,6 +50,10 @@ const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, lineIndex }) => {
     navigate('/recipeDetail', { state: { recipe } });
   };
 
+  const getRandomImage = (images: string[]) => {
+    return images[Math.floor(Math.random() * images.length)];
+  };
+
   // 라인의 시작점을 조정하기 위한 offset
   const offset = lineIndex * 150;
 
@@ -60,7 +65,13 @@ const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, lineIndex }) => {
             <h2 className="card-name">{recipe.name}</h2>
             <p className="card-text">{recipe.text}</p>
           </div>
-          <div className="card-img"></div>
+          <div
+            className="card-img"
+            style={{
+              backgroundImage: recipe.images.length > 0 ? `url(${getRandomImage(recipe.images)})` : 'none',
+              backgroundColor: recipe.images.length > 0 ? 'transparent' : '#ddd',
+            }}
+          ></div>
         </div>
       ))}
     </div>
