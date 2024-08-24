@@ -1,0 +1,45 @@
+.category-select {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+/* 카테고리 캡슐 */
+.category-capsule {
+  position: absolute;
+  left: 0;
+  top: 13%;
+  transform: translateX(-40%);
+  width: 45%;
+  height: 55vh;
+  border-radius: 45% / 55%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5%;
+  z-index: 10;
+}
+
+.category-title {
+  font-size: 10rem;
+  text-align: right;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+/* 레시피 라인 모음 */
+.recipe-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  top: 20%;
+  left: 0;
+  right: 0;
+  overflow: hidden; /* 스크롤 숨기기 */
+  padding: 10px;
+  margin-bottom: 0;
+}
