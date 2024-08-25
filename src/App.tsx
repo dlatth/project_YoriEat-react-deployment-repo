@@ -6,6 +6,7 @@ import Script from './pages/Script';
 import UserDetail from './pages/UserDetail';
 import RecipeDetail from './pages/RecipeDetail';
 import Setting from './components/Setting';
+import RecentViews from './pages/RecentViews';
 import Navbar from './components/NavBar';
 import RecentViews from './pages/RecentViews';
 import './App.css';

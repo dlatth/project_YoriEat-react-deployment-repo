@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar">
       <div className="nav-item" onClick={handleClickBack}>
-        <img src="/images/Back.png" alt="Back" className="nav-icon-back" />
+        <img src="/images/Back.png" alt="Back" className="nav-icon" />
       </div>
       <Link to="/mainCategories" className="nav-item">
         <div className={getActiveClass('/mainCategories')}>
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
         </div>
       </Link>
       <Link to="/recentViews" className="nav-item">
-        <img src="/images/RecentViews.png" alt="RecentViews" className="nav-icon-recent" />
+        <img src="/images/Recent.png" alt="RecentViews" className="nav-icon" />
       </Link>
     </div>
   );
