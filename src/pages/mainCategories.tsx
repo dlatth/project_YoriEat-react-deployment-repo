@@ -50,7 +50,7 @@ const MainCategories: React.FC = () => {
 
   return (
     <div
-      className="category-container"
+      className="main-categories"
       style={{ backgroundColor: currentCategory.bg_color }}
       onClick={handleCategoryClick}
     >
@@ -59,7 +59,9 @@ const MainCategories: React.FC = () => {
       </div>
       <div className="category-content">
         <div className="category-image" style={{ backgroundImage: `url(${currentCategory.image})` }}></div>
-        <h1 style={{ color: currentCategory.txt_color }}>{currentCategory.name}</h1>
+        <h1 className="current-category-title" style={{ color: currentCategory.txt_color }}>
+          {currentCategory.name}
+        </h1>
       </div>
       <div className="arrow" onClick={handleNextClick}>
         <img src={`${process.env.PUBLIC_URL}/images/angleRight.svg`} alt="Next" />
