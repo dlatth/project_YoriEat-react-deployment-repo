@@ -3,7 +3,7 @@
 }
 
 .left-section {
-  background-color: antiquewhite;
+  background-color: #f9f9f9;
   height: 100vh;
   flex: 0 0 50%;
 }
@@ -17,19 +17,23 @@
 }
 
 .right-section {
-  justify-content: flex-end;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 50%;
+  height: 100vh;
+  background-color: #121212;
 }
 
 /* 이미지 스타일 */
 .recipe-image {
-  position: relative;
   width: 100%;
   height: 40vh;
   object-fit: cover;
   margin-bottom: 20px;
   opacity: 0.3;
-  z-index: 1;
 }
 
 /* 제목 스타일 */
@@ -40,7 +44,6 @@
   left: 5%;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 2;
 }
 
 /* 태그 버튼 스타일 */
@@ -88,14 +91,19 @@
 }
 
 /* 텍스트 스타일 */
-.recipe-text {
-  font-size: 16px;
+.recipe-detail-text {
+  width: 35%;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #f9f9f9;
+  word-break: break-word;
 }
 
 /* 캐러셀 스타일 */
 .carousel {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -109,45 +117,42 @@
 }
 
 .carousel-slide {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
+.carousel button {
+  color: #f9f9f9;
+}
+
 .carousel-card {
   width: 80%;
+  height: 30vh;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: transform 0.5s ease;
 }
 
-.carousel-card p {
-  margin: 0;
-  font-size: 18px;
+.carousel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-  .recipe-detail {
-    flex-direction: column;
-  }
-
-  .left-section,
-  .right-section {
-    flex: none;
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .recipe-image {
-    margin-bottom: 15px;
-  }
-
-  .carousel-card {
-    width: 100%;
-  }
+.carousel-card p {
+  width: 100%;
+  height: auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #121212;
+  background-color: rgba(255, 255, 255, 0.6);
 }

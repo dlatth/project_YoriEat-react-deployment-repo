@@ -16,6 +16,8 @@ interface User {
 const RecipeDetail: React.FC = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [user, setUser] = React.useState<User | null>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = React.useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const location = useLocation();
   const recipe = location.state?.recipe;
   const process = location.state?.process;
@@ -40,6 +42,21 @@ const RecipeDetail: React.FC = () => {
   if (!recipe || !process) {
     return <div>레시피 정보가 없습니다.</div>;
   }
+
+  const handleCardClick = () => {
+    // 영상이 재생 중이면 멈추고, 멈춰있으면 재생
+    if (isVideoPlaying) {
+      videoRef.current?.pause();
+    } else {
+      videoRef.current?.play();
+      setIsVideoPlaying(true);
+    }
+  };
+
+  // 영상이 끝나면 재생 상태를 false로 변경
+  const handleVideoEnded = () => {
+    setIsVideoPlaying(false);
+  };
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide === process.text.length - 1 ? 0 : prevSlide + 1));
@@ -88,14 +105,34 @@ const RecipeDetail: React.FC = () => {
 
       {/* 오른쪽 섹션 */}
       <div className="right-section">
-        <div className="recipe-text">{recipe.text}</div>
+        <div className="recipe-detail-text">{recipe.text}</div>
         <div className="carousel">
           <button onClick={prevSlide} className="carousel-control prev">
             ◀
           </button>
           <div className="carousel-slide">
-            <div className="carousel-card">
-              <p>{process.text[currentSlide]}</p>
+            <div
+              className="carousel-card"
+              style={{ backgroundImage: !isVideoPlaying ? `url(${process.images[currentSlide]})` : 'none' }}
+              onClick={() => {
+                if (process.videos[currentSlide]) {
+                  handleCardClick(); // 영상이 있을 때만 handleCardClick 실행
+                }
+              }}
+            >
+              {isVideoPlaying ? (
+                <video
+                  ref={videoRef}
+                  className="carousel-video"
+                  src={process.videos[currentSlide]}
+                  autoPlay
+                  muted
+                  playsInline
+                  onEnded={handleVideoEnded}
+                />
+              ) : (
+                <p>{process.text[currentSlide]}</p>
+              )}
             </div>
           </div>
           <button onClick={nextSlide} className="carousel-control next">
