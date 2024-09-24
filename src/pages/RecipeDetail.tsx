@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/recipeDetail.css';
 
 interface User {
@@ -19,6 +19,7 @@ const RecipeDetail: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = React.useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const location = useLocation();
+  const Navigate = useNavigate();
   const recipe = location.state?.recipe;
   const process = location.state?.process;
 
@@ -44,12 +45,20 @@ const RecipeDetail: React.FC = () => {
   }
 
   const handleCardClick = () => {
-    // 영상이 재생 중이면 멈추고, 멈춰있으면 재생
-    if (isVideoPlaying) {
-      videoRef.current?.pause();
-    } else {
-      videoRef.current?.play();
-      setIsVideoPlaying(true);
+    if (videoRef.current) {
+      if (!isVideoPlaying) {
+        videoRef.current.pause();
+        setIsVideoPlaying(false);
+      } else {
+        videoRef.current
+          .play()
+          .then(() => {
+            setIsVideoPlaying(true);
+          })
+          .catch((error) => {
+            console.error('영상을 재생할 수 없습니다.', error);
+          });
+      }
     }
   };
 
@@ -58,12 +67,20 @@ const RecipeDetail: React.FC = () => {
     setIsVideoPlaying(false);
   };
 
+  const onClickUser = () => {
+    Navigate('/userDetail', { state: { user } });
+  };
+
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === process.text.length - 1 ? 0 : prevSlide + 1));
+    if (!isVideoPlaying) {
+      setCurrentSlide((prevSlide) => (prevSlide === process.text.length - 1 ? 0 : prevSlide + 1));
+    }
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? process.text.length - 1 : prevSlide - 1));
+    if (!isVideoPlaying) {
+      setCurrentSlide((prevSlide) => (prevSlide === 0 ? process.text.length - 1 : prevSlide - 1));
+    }
   };
 
   return (
@@ -91,7 +108,7 @@ const RecipeDetail: React.FC = () => {
             </ul>
           </div>
           {user && (
-            <div className="recipe-user">
+            <div className="recipe-user" onClick={onClickUser}>
               <img className="user-image" src={user.image} alt={user.name} />
               <div className="user-info">
                 <h2 className="user-name">{user.name}</h2>
