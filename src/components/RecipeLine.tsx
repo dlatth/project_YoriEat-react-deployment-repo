@@ -4,19 +4,32 @@ import '../styles/recipeLine.css';
 
 interface Recipe {
   id: number;
-  category_id: number;
-  user_id: number;
   name: string;
   text: string;
+  ingredient: string[];
+  time: number;
   images: string[];
+  tags: string[];
+  description: string;
+  category_id: number;
+  user_id: number;
+}
+
+interface Process {
+  id: number;
+  images: string[];
+  videos: string[];
+  text: string[];
+  recipe_id: number;
 }
 
 interface RecipeLineProps {
   recipes: Recipe[];
+  processes: Process[];
   lineIndex: number;
 }
 
-const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, lineIndex }) => {
+const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, processes, lineIndex }) => {
   const lineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -47,7 +60,8 @@ const RecipeLine: React.FC<RecipeLineProps> = ({ recipes, lineIndex }) => {
   }, []);
 
   const handleCardClick = (recipe: Recipe) => {
-    navigate('/recipeDetail', { state: { recipe } });
+    const recipeProcess = processes.find((process) => process.recipe_id === recipe.id);
+    navigate('/recipeDetail', { state: { recipe, process: recipeProcess } });
   };
 
   const getRandomImage = (images: string[]) => {

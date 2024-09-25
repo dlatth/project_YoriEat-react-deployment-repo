@@ -5,16 +5,29 @@ import RecipeLine from '../components/RecipeLine';
 
 interface Recipe {
   id: number;
-  category_id: number;
-  user_id: number;
   name: string;
   text: string;
+  ingredient: string[];
+  time: number;
   images: string[];
+  tags: string[];
+  description: string;
+  category_id: number;
+  user_id: number;
+}
+
+interface Process {
+  id: number;
+  images: string[];
+  videos: string[];
+  text: string[];
+  recipe_id: number;
 }
 
 const CategorySelect: React.FC = () => {
   // 레시피를 세 줄로 나누기 위한 상태
   const [recipeLines, setRecipeLines] = useState<Recipe[][]>([[], [], []]);
+  const [processes, setProcesses] = useState<Process[]>([]);
   const location = useLocation();
   const category = location.state?.category;
 
@@ -24,6 +37,9 @@ const CategorySelect: React.FC = () => {
       const data = await response.json();
       // 선택한 카테고리에 해당하는 레시피만 필터링
       const filteredRecipes = data.recipes.filter((recipe: Recipe) => recipe.category_id === category.id);
+      const filteredProcesses = data.processes.filter((process: Process) =>
+        filteredRecipes.some((recipe: Recipe) => recipe.id === process.recipe_id)
+      );
 
       // 중복을 제거한 후, 세 그룹으로 나누기
       const uniqueRecipes = filteredRecipes.filter(
@@ -38,7 +54,9 @@ const CategorySelect: React.FC = () => {
       });
 
       setRecipeLines(lines);
+      setProcesses(filteredProcesses);
     };
+
     fetchRecipes();
   }, [category]);
 
@@ -51,7 +69,7 @@ const CategorySelect: React.FC = () => {
       </div>
       <div className="recipe-container">
         {recipeLines.map((recipes, index) => (
-          <RecipeLine key={index} recipes={recipes} lineIndex={index} />
+          <RecipeLine key={index} recipes={recipes} processes={processes} lineIndex={index} />
         ))}
       </div>
     </div>
